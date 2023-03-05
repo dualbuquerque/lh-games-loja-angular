@@ -29,65 +29,25 @@
 	<h2>Novidades</h2>
 
 	<mat-grid-list cols="3">
-		<mat-grid-tile>
+		<mat-grid-tile *ngFor="let produto of produtos">
 			<mat-card class="example-card">
-				<img mat-card-image src="./assets/img/jogo1.PNG" alt="game1">
+				<img mat-card-image src="./assets/img/{{produto.foto}}" alt="produto">
 				
 				<mat-card-header>
-				  <mat-card-title>Game 1</mat-card-title>
+				  <mat-card-title>{{produto.produto}}</mat-card-title>
 				</mat-card-header>
 				
 				<mat-card-content>
 				  <p>
-					Descrição do Jogo...
+					{{produto.descricao}}
 				  </p>
 				</mat-card-content>
 				<mat-card-actions>
-				  <p>R$ 300,00</p>
-				  <button mat-button>Buy</button>
-				</mat-card-actions>
-			  </mat-card>
-		</mat-grid-tile>
-		<mat-grid-tile>
-			<mat-card class="example-card">
-				<img mat-card-image src="./assets/img/jogo2.PNG" alt="game2">
-				
-				<mat-card-header>
-				  <mat-card-title>Game 2</mat-card-title>
-				</mat-card-header>
-				
-				<mat-card-content>
-				  <p>
-					Descrição do Jogo...
-				  </p>
-				</mat-card-content>
-				<mat-card-actions>
-				  <p>R$ 400,00</p>
-				  <button mat-button>Buy</button>
-				</mat-card-actions>
-			  </mat-card>
-		</mat-grid-tile>
-		<mat-grid-tile>
-			<mat-card class="example-card">
-				<img mat-card-image src="./assets/img/jogo3.PNG" alt="game3">
-				
-				<mat-card-header>
-				  <mat-card-title>Game 3</mat-card-title>
-				</mat-card-header>
-				
-				<mat-card-content>
-				  <p>
-					Descrição do Jogo...
-				  </p>
-				</mat-card-content>
-				<mat-card-actions>
-				  <p>R$ 500,00</p>
-				  <button mat-button>Buy</button>
+				  <p>{{produto.preco | currency: 'BRL'}}</p>
+				  <button mat-raised-button color="primary">Buy</button>
 				</mat-card-actions>
 			  </mat-card>
 		</mat-grid-tile>
 	  </mat-grid-list>
 	  
-	  
-
 </main>
